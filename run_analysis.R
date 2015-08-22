@@ -1,7 +1,7 @@
 run_analysis <- function() {
       
       #---------------------------------------------
-      # Read data
+      # step 1: Read data
       #---------------------------------------------
       #read measurements
       x_train <- read.table("./UCI HAR Dataset/train/X_train.txt", header = FALSE)
@@ -29,7 +29,7 @@ run_analysis <- function() {
       
       
       #---------------------------------------------
-      # Verify data
+      # step 2: Verify data
       #---------------------------------------------
       num_x_test <- dim(x_test)           #num. obs/columns x_test
       num_x_train <- dim(x_train)         #num. obs/columns x_train
@@ -69,7 +69,7 @@ run_analysis <- function() {
       }
      
       #---------------------------------------------
-      # Point 2. : mean and std dev. colums
+      # step 3: mean and std dev. colums (Point 2.)
       #---------------------------------------------
       #add columns names to test and train data
       names(x_test) <- namesHeader
@@ -82,43 +82,69 @@ run_analysis <- function() {
       x_test <- subset(x_test, select = var)
       x_train <- subset(x_train, select = var)
       
+      #exclude column names with ".BodyBody."
+      x_test <- select(x_test, -contains("BodyBody"))
+      x_train <- select(x_train, -contains("BodyBody"))
+      
       
       #---------------------------------------------
-      # Add ID activity
+      # step 4:  Add ID activity
       #---------------------------------------------
       x_train <- cbind(y_train, x_train)
       x_test <- cbind(y_test, x_test)
       
       
       #---------------------------------------------
-      # Add Subject 
+      # step 5:  Add Subject 
       #---------------------------------------------
       x_train <- cbind(subject_train, x_train)
       x_test <- cbind(subject_test, x_test)
       
 
       #---------------------------------------------
-      # Point 1. mod. : merge train and test data
+      # step 6: merge train and test data (Point 1.)
       #---------------------------------------------
       x <- rbind(x_train, x_test)
       
       
       #---------------------------------------------
-      # Point 3.: descriptive activity
+      # step 7: descriptive activity (Point 3.)
       #---------------------------------------------
       x <- arrange(x, IDActivity)
       x <- merge(x, act, by="IDActivity")
       
     
       #---------------------------------------------
-      # Point 4.: labeling
+      # step 8: labeling (Point 4.)
       #---------------------------------------------
-      l <- changeColumsName(x)
-      names(x) <- l
+      k <- names(x)
+      
+      k <- str_replace(k,"tBody","timeDomain-Body")
+      k <- str_replace(k,"fBody","frequencyDomain-Body")
+      
+      k <- str_replace(k,"tGravity","timeDomain-Gravity")
+      k <- str_replace(k,"fGravity","frequencyDomain-Gravity")
+      
+      k <- str_replace(k,"-BodyAcc-","-Body-Accelerometer-")
+      k <- str_replace(k,"-BodyAccJerk-","-Body-Accelerometer-Jerk-")
+      k <- str_replace(k,"-BodyGyroJerk-","-Body-Gyroscope-Jerk-")
+      k <- str_replace(k,"-BodyAccJerkMag-","-Body-Accelerometer-Jerk-Magnitude-")
+      k <- str_replace(k,"-BodyGyroJerkMag-","-Body-Gyroscope-Jerk-Magnitude-")
+      k <- str_replace(k,"-BodyAccMag-","-Body-Accelerometer-Magnitude-")
+      k <- str_replace(k,"-BodyGyroMag-","-Body-Gyroscope-Magnitude-")
+      k <- str_replace(k,"-BodyGyro-","-Body-Gyroscope-")
+      
+      k <- str_replace(k,"-GravityAcc-","-Gravity-Accelerometer-")
+      k <- str_replace(k,"-GravityAccMag-","-Gravity-Accelerometer-Magnitude-")
+      
+      k <- str_replace(k,"-std","-stdDev")
+      
+      #update columns name
+      names(x) <- k
       
       
       #---------------------------------------------
-      # Point 5.: tyde dataset
+      # step 9: tyde dataset (Point 5.)
       #---------------------------------------------
       tidy_data <- x %>% 
                   group_by(IDSubject, Activity) %>% 
