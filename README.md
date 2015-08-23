@@ -8,15 +8,17 @@
 
 ###Step 1: Read data
 * nessun problema di RAM: i files selezionati occupano circa 80MB, il mio PC ha 8GB di RAM.
+
 * lettura di tutti i files selezionati e caricamento nei seguenti data frame:
-**  input file: x_train.txt          --> data frame: x_train.txt
-**  input file: x_test.txt           --> data frame: x_test.txt
-**  input file: features.txt         --> data frame: header
-**  input file: subject_train.txt    --> data frame: subject_train  
-**  input file: subject_test.txt     --> data frame: subject_test
-**  input file: y_test.txt           --> data frame: y_test  
-**  input file: y_train.txt          --> data frame: y_train
-**  input file: activity_labels.txt  --> data frame: act  
+*  input file: x_train.txt          --> data frame: x_train.txt
+*  input file: x_test.txt           --> data frame: x_test.txt
+*  input file: features.txt         --> data frame: header
+*  input file: subject_train.txt    --> data frame: subject_train  
+*  input file: subject_test.txt     --> data frame: subject_test
+*  input file: y_test.txt           --> data frame: y_test  
+*  input file: y_train.txt          --> data frame: y_train
+*  input file: activity_labels.txt  --> data frame: act 
+ 
 * i files delle directories "Inertial Signals" non vengono letti perchè le colonne non sono 
 * chiaramente descritte nel file "features_info.txt" (vedi CodeBook.md). 
 
