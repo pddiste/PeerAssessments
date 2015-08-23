@@ -60,6 +60,7 @@
 ###Step 8: labeling (Point 4.)
 * replace nomi colonne con descrizioni estese
 * str_replace utilizzata più volte con sostituzione delle stringhe:
+
 >* 't...'       replace with  'timeDomain...'
 >* 'f...'       replace with  'frequencyDomain...'
 >* '...Acc...'  replace with  '...Accelerometer...'  
