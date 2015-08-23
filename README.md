@@ -13,14 +13,14 @@
 * no problem of RAM: the selected files are about 80MB, my PC has 8GB RAM.
 
 * reading all the selected files and loading in the following data frame:
->*  input file: x_train.txt           --> data frame: x_train.txt
->*  input file: x_test.txt            --> data frame: x_test.txt
+>*  input file: x_train.txt           --> data frame: x_train
+>*  input file: x_test.txt            --> data frame: x_test
 >*  input file: features.txt          --> data frame: header
->*  input file: subject_train.txt     --> data frame: subject_train (col.names="IDSubject")  
->*  input file: subject_test.txt      --> data frame: subject_test (col.names="IDSubject")
->*  input file: y_test.txt            --> data frame: y_test (col.names="IDActivity")  
+>*  input file: subject_train.txt     --> data frame: subject_train  (col.names="IDSubject")  
+>*  input file: subject_test.txt      --> data frame: subject_test   (col.names="IDSubject")
+>*  input file: y_test.txt            --> data frame: y_test  (col.names="IDActivity")  
 >*  input file: y_train.txt           --> data frame: y_train (col.names="IDActivity")
->*  input file: activity_labels.txt   --> data frame: act (col.names=c("IDActivity","IDSubject")
+>*  input file: activity_labels.txt   --> data frame: act  (col.names=c("IDActivity","IDSubject")
 
 *  files in directories "Inertial Signals" aren't read because the columns are not
   clearly described in the file "features_info.txt" (rif. CodeBook.md). 
