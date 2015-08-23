@@ -20,7 +20,7 @@
 *  input file: activity_labels.txt  --> data frame: act 
  
 * i files delle directories "Inertial Signals" non vengono letti perchè le colonne non sono 
-* chiaramente descritte nel file "features_info.txt" (vedi CodeBook.md). 
+ chiaramente descritte nel file "features_info.txt" (vedi CodeBook.md). 
 
 ###Step 2: Verify data
 
