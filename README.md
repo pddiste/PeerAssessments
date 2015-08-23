@@ -39,8 +39,7 @@
 * operations performed on both x_train e x_test
 * I don't distinguish between columns with mean () or mean: they are mean.
 * "grep" function select only the columns that contain the pattern "mean|std"
-* I delete the columns with name containing "BodyBody": there is no description of measures
-   by that name in the file "features_info.txt"  
+* I delete the columns with name containing "BodyBody": there is no description of relative measures in the file "features_info.txt"  
 
 ###Step 4:  Add ID activity
 * operations performed on both x_train e x_test
