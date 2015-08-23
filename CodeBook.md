@@ -32,7 +32,7 @@ the measurements (128 columns for each file where 128 are sampling at 50HZ
 * the columns with name containing "BodyBody" are been discarded: there is no description of relative measures in the file "features_info.txt"
  
 ##Columns tidy data set (df= "tidy_data")
-Column name                                                 Description
+Column name																																																	Description
 -----------                                                 -----------
 * 1. IDSubject                                              Subject number identification                          
 * 2. Activity                                               Activity label
