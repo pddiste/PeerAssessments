@@ -1,11 +1,10 @@
-#-------
 #READ.ME
-#-------
+
 ##Peer Assessments - Getting and Cleaning Data Course
 ##August 22, 2015
 ####READ.ME prepared by P.D. Di Stefano (pierdomenico.distefano@fastwebnet.it)
 
-##Remarks: 
+#Remarks: 
 * packages used:  dplyr, stringr.
 * data sets: unzip of "getdata-projectfiles-UCI HAR Dataset.zip" nella directory "./UCI HAR Dataset". 
 
@@ -61,12 +60,12 @@
 ###Step 8: labeling (Point 4.)
 * replace nomi colonne con descrizioni estese
 * str_replace utilizzata più volte con sostituzione delle stringhe:
->* "t..."       replace with  "timeDomain..." 
+>* "t..."       replace with  "timeDomain..."
 >* "f..."       replace with  "frequencyDomain..."
 >* "...Acc..."  replace with  "...Accelerometer..."  
 >* "...Gyro..." replace with  "...Gyroscope..."
 >* "...Mag..."  replace with  "...Magnitude..."
->* "...std..."  replace with  "...stdDev..."      
+>* "...std..."  replace with  "...stdDev..."
                             
 ###Step 9: tyde dataset (Point 5.)
 * escludo IDActivity
