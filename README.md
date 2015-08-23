@@ -58,8 +58,13 @@
 * x <- merge(x, act, by="IDActivity")
  
 ###Step 8: labeling (Point 4.)
+<<<<<<< HEAD
 * replace existing column names with extended descriptions
 * "str_replace" function used in an iterative way:
+=======
+* replace nomi colonne con descrizioni estese
+* str_replace utilizzata più volte con sostituzione delle stringhe:
+>>>>>>> origin/master
 
 >* 't...'       replace with  'timeDomain...'
 >* 'f...'       replace with  'frequencyDomain...'
